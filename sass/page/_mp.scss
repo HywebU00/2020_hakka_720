@@ -1,0 +1,383 @@
+/////////////////////////////////////////////////////////以下為demo範例///
+// 首頁區塊設定
+.mp_album {
+    margin: 1em auto;
+    position: fixed;
+    bottom: 4.5em;
+    width: 100%;
+    z-index:998;
+    @include screen("mobile") {
+        // position: static;
+        position: relative;
+        bottom: auto;
+        margin: 0 auto;
+        padding: 0;
+    }
+    ul {
+        @include li-reset;
+        margin: 0 2em;
+        text-align: left;
+        li {
+            @include make_col(3, 1);
+            overflow: visible;
+            .thumbnail {
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto 1em;
+                box-shadow: 0 0 0 1px #fff;
+                background: #dadada;
+                .caption{
+                    padding: .1em 0 .6em;
+                }
+                h3{
+                    text-align: left;
+                    margin: 0;
+                    font-size: 1.45em;
+                    font-family: 'Noto Serif TC', serif;
+                    font-weight: bold;
+                    font-weight: 600;
+                }
+            }
+            @include screen("mobile") {
+                display: block;
+                width:100%;
+            }
+        }
+    }
+
+
+    .img-container {
+        width: 100%;
+        position: relative;
+        @include aspect-ratio(16, 4);
+        background: #F1F1F1;
+    }
+}
+
+
+//rightlink
+.rightlink{
+    position: relative;
+    padding-top: 22vh;
+
+
+    ul{
+        @include li-reset;
+        margin: 0;
+        font-size: 1.125em;
+        text-align: center;
+        font-weight: bold;
+        float: right;
+        width: 12em;
+
+        li{
+            margin: .4em 0;
+            a{
+                background: $secondaryColor;
+                color:#fff;
+                display: block;
+                padding: .5em 1em;
+                &:hover, &:focus{
+                    background: darken($secondaryColor, 8);
+                }
+            }
+        }
+    }
+    @include screen('tablet') {
+        padding-top: 8vh;
+    }
+    @include screen("mobile") {
+        padding-top: 4em;
+        clear: both;
+
+        ul{
+            float: none;
+            width: 90%;
+            margin: 1em auto;
+        } 
+    }
+}
+
+//block-720
+.block-720{
+    // width: 600px;
+    position: fixed;
+    top:30vh;
+    left: 50%;
+    margin-left: -15%;
+
+    .col {
+        @include make-xs-column(12);
+        @include make-sm-column(6);
+        @include make-md-column(6);
+        @include make-lg-column(6);
+    }
+    h2{
+        font-size: 10em;
+        color:#fff;
+        font-family: 'Amiri', serif;
+        font-weight: bold;
+        font-weight: 400;
+        margin: -40px 0 0 0;
+        font-style: italic;
+        text-shadow: 0.005em 0.005em 0.05em #000;
+        line-height: 1em;
+        position: relative;
+        &:before{
+            content:'';
+            position: absolute;
+            width: 120px;
+            height: 1px;
+            background: #fff;
+            transform: rotate(135deg);
+            top:0;
+            right:-.6em;
+        }
+        &:after{
+            content:'';
+            position: absolute;
+            width: 120px;
+            height: 1px;
+            background: #fff;
+            transform: rotate(135deg);
+            top:1.2em;
+            right:.7em;
+        }
+    }
+    h3{
+        font-size: 1.8em;
+        color:#fff;
+        font-family: 'Noto Serif TC', serif;
+        font-weight: bold;
+        font-weight: 600;
+        margin: .5em 0 0 -1.2em;
+        font-style: italic;
+        text-shadow: 0.1em 0.1em 0.2em #000;
+    }
+    p{
+        width: 20em;
+        color:#fff;
+        font-family: 'Noto Serif TC', serif;
+        font-weight: bold;
+        font-weight: 600;
+        margin: .5em 0 0 -2em;
+        font-style: italic;
+        text-shadow: 0.1em 0.1em 0.2em #000;
+        font-size: 1.125em;
+        line-height: 1.5em;
+    }
+    @include screen('notebook') {
+       left: 30%;
+       margin-left: -15%; 
+   }
+   @include screen("mobile") {
+      position: relative;
+      top:40px;
+      left: auto;
+      margin-left: 0;
+      .col{
+        float: none;
+    }
+    h2{
+        margin: 0 0 0 10px;
+        font-size: 8em;
+    }
+    h3{
+        margin: .5em 0 .5em 30px;
+        font-size: 1.25em;
+    }
+    p{
+        margin: .5em 1em 1em 30px;
+        width: auto;
+        font-size: 1em;
+    }
+} 
+
+}
+
+//mpsidebar
+.mpsidebar {
+  height: 100%;
+  width: 340px;
+  position: fixed;
+  z-index: 999999!important;
+  top: 0;
+  right: 0;
+  background: #fff;
+  overflow-y: auto;
+  transition: 0.5s;
+  padding-top: 40px;
+  text-align: left;
+  display: none;
+  @include screen("mobile") {
+     width: 100%; 
+ }
+ .closebtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 2em;
+  background: #333;
+  padding: 2px;
+  color:#fff;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  display: block;
+  img{
+    left:2px;
+    top:2px;
+}
+&:hover, &:focus{
+    background: darken($secondaryColor, 8);
+
+}
+
+
+}
+.mppic{
+    margin: .5em 20px;
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+h3{
+    margin: .2em 20px .8em;
+    color:#262626;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: bold;
+    font-weight: 600;
+    font-size: 1.5em;
+}
+p{
+    color:#6d6d6d;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: bold;
+    font-weight: 600;
+    margin: .5em 20px 1em 25px;
+    line-height: 1.6em;
+}
+.btn{
+    background: #f0058f;
+    color:#fff;
+    font-weight: bold;
+    font-weight: 600;
+    font-family: 'Noto Serif TC', serif;
+    width: 70%;
+    font-size: 1.125em;
+    border-radius: 0;
+    &:hover, &:focus{
+        background: darken(#f0058f, 8);
+    }
+}
+
+}
+
+//r_album
+.r_album {
+    margin: 1em auto;
+    @include screen("mobile") {
+        position: static;
+        margin: 2em auto;
+    }
+    ul {
+        @include li-reset;
+        margin: 0 1.5em;
+        position: relative;
+        li {
+            width: 100%;
+            margin: 0;
+            overflow: visible;
+            a{
+                .overlay {
+                  position: absolute;
+                  bottom: 0;
+                  left: 0;
+                  right: 0;
+                  background-color: rgba(0, 0, 0 , .3);
+                  overflow: hidden;
+                  width: 100%;
+                  height: 100%;
+                  -webkit-transform: scale(0);
+                  -ms-transform: scale(0);
+                  transform: scale(0);
+                  -webkit-transition: .3s ease;
+                  transition: .3s ease;
+
+
+                  img{
+                    width: 96px!important;
+                    height: 96px!important;
+                    margin: 15.5% auto 0;
+                }
+            }
+        }
+
+        .thumbnail {
+            width: 100%;
+            max-width: 100%;
+            margin: 0 auto 1em;
+            box-shadow: 0 0 0 1px #fff;
+            background: #fff;
+            h3{
+                margin: 0;
+                font-size: 1.25em;
+                font-family: 'Noto Serif TC', serif;
+                font-weight: bold;
+                font-weight: 600;
+            }
+            p{
+                font-family: 'Noto Serif TC', serif;
+                font-weight: bold;
+                font-weight: 600;
+                margin: .5em 0 1em;
+                line-height: 1.6em;
+            }
+
+            .caption{
+                padding: .1em 0 .6em;
+                width: 100%;
+            }
+
+
+
+        }
+        @include screen("mobile") {
+            display: block;
+            width:100%;
+        }
+
+    }
+}
+
+
+.img-container {
+    width: 100%;
+    position: relative;
+    @include aspect-ratio(16, 10);
+    background: #F1F1F1;
+    &:hover{
+     .overlay {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+  } 
+}
+
+
+}
+.house1{
+    position: absolute;
+    top:0;
+    right:0;
+    background: #a1a1a1;
+    color:#fff;
+    font-weight: bold;
+    font-size: .875em;
+    min-width: 10em;
+    text-align: center;
+    padding: .2px;
+}
+
+}
