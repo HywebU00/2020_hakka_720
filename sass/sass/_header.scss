@@ -102,21 +102,25 @@
         }
         img {
             display: inline-block;
-            // max-width: 300px;
+            max-width: 500px;
             max-height: 75px;
 
         }
-
-        @include screen('mobile') {
-            padding: 2px 40px;
-            width: 100%;
-            text-align: center;
-            height: 60px;
-            img {
-                max-width: 270px;
-                height: auto;
-                max-height: 54px;
-                margin: 16px auto 0;
+        @media screen and (max-width: 768px) {
+            img{
+             max-width: 400px;
+         }
+     }
+     @include screen('mobile') {
+        padding: 2px 40px;
+        width: 100%;
+        text-align: center;
+        height: 60px;
+        img {
+            max-width: 270px;
+            height: auto;
+            max-height: 54px;
+            margin: 16px auto 0;
                 // transform: scale(.8);
 
             }
@@ -147,7 +151,7 @@
         @extend %clearfix;
         overflow: hidden;
         width: 100%;
-        margin-bottom: .5em;
+        // margin-bottom: .5em;
         box-sizing:border-box;
         ul {
             float: right;
@@ -188,7 +192,7 @@
     max-width: 50%;
     float: right;
     vertical-align: middle;
-    padding: 0em .3em 0em;
+    padding: 0 .3em 0em;
     overflow: hidden;
     @include box-sizing;
     @include screen('mobile') {
@@ -251,8 +255,9 @@
         float: right;
         input, input[type="submit"] {
             margin: 0;
-            padding: .4em 1em .4em !important;
+            padding: .45em 1em .5em !important;
             font-size: .813em;
+            top:6%;
         }
     }
     .keywordHot {
@@ -374,6 +379,8 @@
         }
     }
 }
+
+
 // header fix
 .header.fixed {
     position: fixed;
@@ -399,6 +406,7 @@
 
 //mp
 .mpwrapper{
+
     .menu{
         display: none;
     }
@@ -425,7 +433,7 @@
             padding: 2px 40px;
             width: 100%;
             text-align: center;
-            height: 60px;
+            height: 85px;
             background: url('../images/logo.png')no-repeat center center;
             background-size: 220px auto;
             img {
@@ -434,12 +442,18 @@
             }
         }
     }
-    .searchCtrl {
-        display: none!important;
-        &:before {
-            display: none;
-        }
+
+//search
+.search {
+    min-width: 22%;
+    max-width: 50%;
+    .keywordHot{
+        display: none;
     }
 }
+
+
+}
+
 
 }
