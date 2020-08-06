@@ -104,7 +104,7 @@
     position: fixed;
     top:30vh;
     left: 50%;
-    margin-left: -15%;
+    margin-left: -18%;
 
     .col {
         @include make-xs-column(12);
@@ -131,7 +131,7 @@
             background: #fff;
             transform: rotate(135deg);
             top:0;
-            right:-.6em;
+            right:-.8em;
         }
         &:after{
             content:'';
@@ -141,7 +141,7 @@
             background: #fff;
             transform: rotate(135deg);
             top:1.2em;
-            right:.7em;
+            right:.4em;
         }
     }
     h3{
@@ -149,48 +149,48 @@
         color:#fff;
         font-family: 'Noto Serif TC', serif;
         font-weight: bold;
-        font-weight: 700;
-        margin: .5em 0 0 -1.2em;
+        font-weight: 800;
+        margin: .5em 0 0 -.2em;
         font-style: italic;
         text-shadow: 0.1em 0.1em 0.2em #000;
     }
     p{
-        width: 20em;
+        width: 19em;
         color:#fff;
         font-family: 'Noto Serif TC', serif;
         font-weight: bold;
-        font-weight: 700;
-        margin: .5em 0 0 -2em;
+        font-weight: 800;
+        margin: .5em 0 0 -1em;
         font-style: italic;
         text-shadow: 0.1em 0.1em 0.2em #000;
         font-size: 1.125em;
         line-height: 1.5em;
     }
     @include screen('notebook') {
-     left: 30%;
-     margin-left: -15%; 
- }
- @include screen("mobile") {
-  position: relative;
-  top:40px;
-  left: auto;
-  margin-left: 0;
-  .col{
-    float: none;
-}
-h2{
-    margin: 0 0 0 10px;
-    font-size: 8em;
-}
-h3{
-    margin: .5em 0 .5em 30px;
-    font-size: 1.25em;
-}
-p{
-    margin: .5em 1em 1em 30px;
-    width: auto;
-    font-size: 1em;
-}
+       left: 30%;
+       margin-left: -15%; 
+   }
+   @include screen("mobile") {
+      position: relative;
+      top:40px;
+      left: auto;
+      margin-left: 0;
+      .col{
+        float: none;
+    }
+    h2{
+        margin: 0 0 0 10px;
+        font-size: 8em;
+    }
+    h3{
+        margin: .5em 0 .5em 30px;
+        font-size: 1.25em;
+    }
+    p{
+        margin: .5em 1em 1em 30px;
+        width: auto;
+        font-size: 1em;
+    }
 } 
 
 }
@@ -210,9 +210,9 @@ p{
   text-align: left;
   display: none;
   @include screen("mobile") {
-   width: 100%; 
-}
-.closebtn {
+     width: 100%; 
+ }
+ .closebtn {
   position: absolute;
   top: 0;
   right: 0;
@@ -358,12 +358,12 @@ p{
     @include aspect-ratio(16, 10);
     background: #F1F1F1;
     &:hover{
-       .overlay {
-          -webkit-transform: scale(1);
-          -ms-transform: scale(1);
-          transform: scale(1);
-      } 
-  }
+     .overlay {
+      -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+      transform: scale(1);
+  } 
+}
 
 
 }
